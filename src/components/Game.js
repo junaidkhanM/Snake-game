@@ -11,8 +11,8 @@ export default class Game extends Component {
       head: {},
     },
     currentPosition: {
-      r: null,
-      c: null,
+      r: 4,
+      c: 4,
     },
   };
 
@@ -84,6 +84,18 @@ export default class Game extends Component {
         currentPosition.r === head.row &&
         currentPosition.c < head.col
       ) {
+        head.col--;
+      } else if (currentPosition.r < head.row && currentPosition.c > head.col) {
+        head.row--;
+        head.col++;
+      } else if (currentPosition.r > head.row && currentPosition.c < head.col) {
+        head.row++;
+        head.col--;
+      } else if (currentPosition.r > head.row && currentPosition.c > head.col) {
+        head.row++;
+        head.col++;
+      } else if (currentPosition.r < head.row && currentPosition.c < head.col) {
+        head.row--;
         head.col--;
       }
 
