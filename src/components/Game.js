@@ -52,7 +52,7 @@ export default class Game extends Component {
     }
   }
 
-  gameTick() {
+  moveSnake() {
     this.setState((state) => {
       let { currentPosition } = state;
 
@@ -139,7 +139,7 @@ export default class Game extends Component {
     this.resetGrid();
 
     setInterval(() => {
-      this.gameTick();
+      this.moveSnake();
     }, 200);
   }
 
